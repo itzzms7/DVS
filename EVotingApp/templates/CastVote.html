@@ -1,0 +1,75 @@
+{% load static %}
+<html>
+<head>
+<title>E-Voting System Using Ethereum Blockchain</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'default.css' %}" rel="stylesheet" type="text/css" media="screen" />
+ <script LANGUAGE="Javascript" >
+function validate(){
+	var x=document.forms["f1"]["t2"].value;
+	var y=document.forms["f1"]["t3"].value;
+	if(x == null || x==""){
+		window.alert("Please enter your name");
+		document.f1.t1.focus();
+		return false;
+	}
+	if(y == null || y==""){
+		window.alert("Please enter your aadhar number");
+		document.f1.t2.focus();
+		return false;
+	}
+	return true;
+}
+		
+	
+	</script>
+</head>
+<body>
+<div id="wrapper">
+  <div id="header">
+    <div id="logo">
+      <h1><font color="orange" size=6>E-Voting System Using Ethereum Blockchain</font></h1>
+	  <marquee><font color="pink" size=4>E-Voting System Using Ethereum Blockchain</font></marquee>
+    </div>
+   
+  
+    </div>
+  </div>
+  <div id="menu">
+    <ul>
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'Admin' %}">Admin Login</a></li>
+      <li><a href="{% url 'Vote' %}">Cast Your Vote</a></li>
+  </ul>
+  </div>
+  <div class="entry">
+   <br/><br/><br/>
+	<font size="" color="white"><center>{{ data }}</center></font>
+	 <br>
+	 <center><font size="3" color="white">Cast Your Vote Screen</font></center>
+	<form name="f1" method="post" action={% url 'CastVoteAction' %}  nSubmit="return validate()">
+	{% csrf_token %}
+	<br><br>
+	<TABLE align=center width="35%" class="notepad">
+	{{data1|safe}}
+		<TR><TH align="left"><font size="" color="white">Voter&nbsp;Name
+		<TD><Input type=text name="t2" value='' class="form-control">
+		<div id='nameid'></div>
+		</TD>
+		</TR>
+		
+		<TR><TH align="left"><font size="" color="white">Aadhar&nbsp;Number
+		<TD><Input type='tel' pattern="[0-9]{12}" name="t3"  value='' class="form-control" required="Enter 12 Digit Aadhar Number">
+		</TR>
+		  <TR>
+				 <TD></TD>
+			<TD>	
+		  <input type="submit" value="Submit Your Vote">
+		 
+		  </TABLE>
+		
+</form>
+</div>
+
+</body>
+</html>
