@@ -6,6 +6,7 @@ contract EVoting {
     
     // Structure to define a Candidate
     struct Candidate {
+
         int id;
         string name;
         string symbol;
@@ -13,7 +14,7 @@ contract EVoting {
         bool exists; // To check if candidate is registered
     }
 
-    // Mapping to store candidates by their ID for instant lookup
+    // Mapping to Store candidates by their ID for instant lookup
     mapping(int => Candidate) public candidates;
     
     // Mapping to track who has voted using a cryptographic hash (Privacy & Security)
