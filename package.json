@@ -1,0 +1,29 @@
+{
+  "name": "dvs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Itzms/DVS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Itzms/DVS/issues"
+  },
+  "homepage": "https://github.com/Itzms/DVS#readme",
+  "dependencies": {
+    "openai": "^6.34.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.17",
+    "hardhat": "^3.4.2",
+    "typescript": "~5.8.0"
+  }
+}

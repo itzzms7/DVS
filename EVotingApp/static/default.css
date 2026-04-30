@@ -1,404 +1,244 @@
-/*
-Design by Free CSS Templates
-http://www.freecsstemplates.org
-Released for free under a Creative Commons Attribution 2.5 License
-*/
+/* ================= ROOT THEME ================= */
+
+ /* :root {   
+    --bg: #0b1220;
+    --card: #111827;
+    --primary: #1f2937;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --border: #1f2937;
+
+    --radius: 12px;
+}  */
+
+/* ===== CHROME AUTOFILL FIX ===== */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+    -webkit-text-fill-color: #000000 !important;
+    caret-color: #000000;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+ 
+:root {  
+    --bg: #FFF5F7;
+    --card: #ffffff;
+    --primary: #181516;
+    --accent: #94445d;
+    --accent-hover: #7a384c;
+    /* --text: #2D292A;   */
+    --text: black; 
+    --muted: #2e2527;
+    --border: #cfc4c6;
+
+    --radius: 12px;
+}  
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.15s ease;
+}
 
 body {
-	margin: 0;
-	padding: 0;
-	background: #151515 url(images/img01.jpg) repeat-x left top;
-	text-align: justify;
-	font: 13px "Trebuchet MS", Arial, Helvetica, sans-serif;
-	color: #7F7772;
+    font-family: 'Manrope', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
 }
 
-form {
-	margin: 0;
-	padding: 0;
-}
-
-fieldset {
-	margin: 0;
-	padding: 0;
-	border: none;
-}
-
-input, textarea {
-	padding: 5px;
-	border: 1px solid #626262;
-	font: normal 1em "Trebuchet MS", Arial, Helvetica, sans-serif;
-}
-
-h1, h1 a, h2, h2 a, h3, h3 a {
-	margin: 0;
-	text-decoration: none;
-	font-weight: normal;
-	color: #CF3822;
-}
-
-h1 {
-	letter-spacing: -3px;
-	font-size: 2.6em;
-}
-
-h2 {
-	letter-spacing: -2px;
-	font-size: 2em;
-}
-
-h3 {
-	margin-bottom: 2em;
-	font-size: 1em;
-	font-weight: bold;
-}
-
-p, ol, ul {
-	margin: 0 0 2em 0;
-	line-height: 200%;
-}
-
-blockquote {
-	margin: 0 0 0 1.5em;
-	padding-left: 1em;
-	border-left: 5px solid #DDDDDD;
-}
-
-a {
-	color: #FFFFFF;
-	text-decoration: none;}
-
-a:hover {
-	text-decoration: none;
-	color: #FF5134;
-}
-
-img {
-	border: none;
-}
-
-img.left {
-	float: left;
-	margin: 8px 20px 0px 0px;
-	border: 2px solid #434343; 
-}
-#registersuccess{
-	margin-top: 10px;
-	text-align: center;
-	text-transform: uppercase;
-	font-family: 'Arvo', serif;
-	font-size: 15px;
-}
-
-/* Header */
-
-#wrapper {
-}
-
-#header {
-	width: 900px;
-	height: 170px;
-	margin: 0 auto;
-	background: url(images/img02.jpg) no-repeat right top;
-}
-
-#logo h1, #logo p {
-	float: left;
-	color: #AAFF00;
-}
-
-#logo h1 {
-	height: 88px;
-	padding: 20px 90px 0 0;
-	font-size: 4em;
-}
-
-#logo p {
-	margin: 0 0 0 -80px;
-	padding: 55px 0 0 0;
-	line-height: normal;
-	letter-spacing: -1px;
-	font-size: 1.2em;
-	font-weight: bold;
-}
-
-#logo a {
-	text-decoration: none;
-	color: #FFFFFF;
-	font-weight: bold;
-}
-
-#logo p a {
-	color: #FF5134;
-}
-
-/* RSS */
-
-#rss {
-	padding: 30px 39px 20px 0;
-	text-align: right;
-}
-
-#rss a {
-	padding: 0 0 3px 24px;
-	text-decoration: none;
-	font-weight: bold;
-	color: #FF5134;
-}
-
-#rss a:hover {
-}
-
-/* Search */
-
-#search {
-	float: right;
-	width: 200px;
-	height: 25px;
-	background: #FFFFFF;
-}
-
-#search #x {
-	display: none;
-}
-
-#search #s {
-	padding: 6px 5px 5px 35px;
-	width: 160px;
-	height: auto;
-	background: none;
-	border: none;
-	font: normal 1em Arial, Helvetica, sans-serif;
-	color: #000;
-}
-
-#search br {
-	display: none;
-}
-
-/* Menu */
-
-#menu {
-	width: 1020px;
-	height: 60px;
-	margin: 0 auto;
-}
-
-#menu ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-#menu li {
-	display: inline;
-	text-transform: uppercase;
-}
+/* ================= NAVBAR ================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-#menu a {
-	display: block;
-	float: left;
-	background: url(images/img03.gif) no-repeat left 75%;
-	padding: 18px 30px 0 15px;
-	text-decoration: none;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 1em;
-	font-weight: bold;
-	color: #FFFFFF;
-}
-
-#menu a:hover {
-	color: #FF5134;
-}
-
-#menu .current_page_item {
-}
+    padding: 16px 40px;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
 
-#menu .current_page_item a {
-	color: #FFFFFF;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-/* Page */
-
-#page {
-	width: 890px;
-	margin: 0 auto;
-	padding: 30px 0;
+.logo {
+    font-size: 20px;
+    font-weight: 700;
 }
-
-/* Ads */
 
-#ads {
-	float: right;
-	width: 160px;
-	padding: 0 0 0 20px;
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--muted);
+    font-weight: 500;
 }
 
-/* Content */
-
-#content {
-	float: left;
-	width: 900px;
+.nav-links a:hover {
+    color: var(--text);
 }
 
-.post {
-	margin-bottom: 50px;
-	border-bottom: 1px #A90000 dashed;
+/* ================= HERO ================= */
+.hero {
+    text-align: center;
+    padding: 60px 20px 30px;
 }
 
-.post .title {
+.hero h1 {
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
 }
 
-.post .title h2 {
-	font-size: 2.2em;
-	color: #CF3822;
+.hero p {
+    color: var(--muted);
+    font-size: 16px;
 }
 
-.post .title p {
-	margin: 0;
-	line-height: normal;
-	color: #BABABA;
-}
+/* ================= CARD ================= */
+.card {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
 
-.post .title p a {
-	color: #880A0B;
-}
+    background: var(--card);
+    padding: 25px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
 
-.post .entry {
-	padding-top: 30px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-.post .links {
-	width: 410px;
-	height: 29px;
-	margin: 0;
-	padding: 6px 0 0 20px;
+.card:hover {
+    transform: translateY(-3px);
+    transition: 0.2s ease;
 }
 
-.post .links a {
-	padding: 0 23px;
-	text-decoration: none;
-	font-weight: bold;
-	color: #CF3822;
+/* ================= GRID ================= */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
 }
 
-.post .links a:hover {
-	text-decoration: underline;
-	color: #CF3822;
+/* ================= IMAGE ================= */
+.banner {
+    width: 100%;
+    border-radius: 10px;
 }
 
-.post .links .more {
-	background: url(images/img07.gif) no-repeat;
+/* ================= CONTENT ================= */
+.content h3 {
+    margin-bottom: 10px;
 }
 
-.post .links .comments {
-	background: url(images/img08.gif) no-repeat;
+.content p {
+    color: var(--muted);
 }
 
-/* Sidebar */
-
-#sidebar {
-	float: right;
-	width: 240px;
+/* ================= DYNAMIC DATA ================= */
+.dynamic-data {
+    margin-bottom: 20px;
+    text-align: center;
 }
-
-#sidebar ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+.dynamic-data td {
+     color: var(--text);
 }
 
-#sidebar li {
-	margin-bottom: 20px;
+/* ================= FORM ================= */
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
 }
 
-#sidebar li ul {
-	padding: 15px 20px;
-	line-height: 200%;
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-#sidebar li li {
-	margin: 0;
-	padding-left: 15px;
-	padding-bottom: 5px;
-	background: url(images/img04.gif) repeat-x left bottom;
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-#sidebar h2 {
-	width: 210px;
-	height: 30px;
-	padding: 5px 0 0 30px;
-	background: url(images/img05.gif) no-repeat left 60%;
-	border-bottom: 1px #A90000 dashed;
-	letter-spacing: -1px;
-	font-size: 1.6em;
-	color: #FFFFFF;
+.form-group label {
+     
+    margin-bottom: 6px;
+    font-size: 14px;
 }
 
-#sidebar a:hover {
+.inp {
+    width: 100%;
+    padding: 10px;
 
-}
+    border-radius: 8px;
+    border: 1px solid var(--border);
 
-/* Calendar */
-
-#calendar_wrap {
-	padding: 15px 20px;
+    background-color: #ffffff !important;
+    color: var(--text);
+    /* 🔴 critical reset */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
-#calendar table {
-	width: 100%;
-	background: #1F1F1D;
-	border: 1px solid #11110F;
-	text-align: center;
-}
+/* ================= BUTTON ================= */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
 
-#calendar thead {
-	background: #161616;
-}
+    background: var(--accent);
+    color: white;
 
-#calendar tbody td {
-	background: #0F0F0D;
-	border: 1px solid #11110F;
-}
+    border: none;
+    border-radius: 8px;
 
-#calendar #prev {
-	text-align: left;
-}
+    cursor: pointer;
+    font-weight: 600;
 
-#calendar #next {
-	text-align: right;
+    transition: 0.2s ease;
 }
 
-#calendar tfoot a {
-	text-decoration: none;
-	font-weight: bold;
+.btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
 }
 
-#calendar #today {
-	background: #121210;
-	border: 1px solid #11110F;
-	font-weight: bold;
-	color: #CF3822
+/* ================= FOOTER ================= */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--muted);
 }
 
-/* Footer */
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-#footer {
-	clear: both;
-	width: 950px;
-	margin: 0 auto;
-	padding: 30px 0;
-	border-top: 2px solid #2B2B2B;
-}
+    .grid {
+        grid-template-columns: 1fr;
+    }
 
-#footer p {
-	margin: 0 0 5px 0;
-	text-align: center;
-	line-height: normal;
-	font-size: .9em;
-}
+    .hero h1 {
+        font-size: 24px;
+    }
 
-#footer a {
-	text-decoration: none;
+    .card {
+        padding: 20px;
+    }
 }
-

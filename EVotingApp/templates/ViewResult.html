@@ -1,48 +1,53 @@
 {% load static %}
-<html>
-<head>
-<title>E-Voting System Using Ethereum Blockchain</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="{% static 'default.css' %}" rel="stylesheet" type="text/css" media="screen" />
-</head>
-<body>
-<div id="wrapper">
-  <div id="header">
-    <div id="logo">
-      <h1><font color="orange" size=6>E-Voting System Using Ethereum Blockchain</font></h1>
-	  <marquee><font color="pink" size=4>E-Voting System Using Ethereum Blockchain</font></marquee>
-    </div>
-   
-  
-    </div>
-  </div>
-  <div id="menu">
-   <ul>
-	<li><a href="{% url 'ViewCount' %}">View Vote Count</a></li> 
-      <li><a href="{% url 'index' %}">Logout</a></li>      
-   </ul>
-  </div>
-  <div id="page">
-   <div id="content">
-      <div class="post">
-        <div class="title">
-          <h2>E-Voting System Using Ethereum Blockchain</h2>
-         </div>
-        <div class="entry">
-		 <br/>
-	 
-	      <p><img src="{% static 'images/images.jpg' %}" alt="" width="890" height="200" class="left" /><p></p><font size="4" color="white">
-          {{data|safe}}
+<!DOCTYPE html>
+<html lang="en">
 
-          </div>
-        
-      </div>
-     
-       
-       
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Panel - E-Voting System</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="{% static 'default.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- NAVBAR (ADMIN CONTEXT) -->
+<div class="navbar">
+    <div class="logo">Admin Panel</div>
+
+    <div class="nav-links">
+        <a href="{% url 'ViewCount' %}">View Vote Count</a>
+        <a href="{% url 'index' %}">Logout</a>
     </div>
-    
-  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Admin Dashboard</h1>
+    <p>View system data and blockchain-related voting information.</p>
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="card">
+
+    <!-- IMAGE -->
+    <img src="{% static 'images/images.jpg' %}" class="banner" alt="Voting Banner">
+
+    <!-- DYNAMIC DATA (UNCHANGED) -->
+    <div class="dynamic-data">
+        {{ data|safe }}
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    © 2026 E-Voting System Using Ethereum Blockchain
+</div>
 
 </body>
 </html>
